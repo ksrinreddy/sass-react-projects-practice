@@ -1,0 +1,250 @@
+@use "../../../styles/scss/abstracts/" as a;
+@use "../../../styles/scss/components/" as c;
+@use "../../../styles/scss/layout/" as l;
+
+// navbar
+.navbar {
+  background: #fff;
+}
+.nav-center {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  @include l.section-center();
+  padding-block: 1rem;
+
+  .logo {
+    width: 200px;
+  }
+}
+.nav-links {
+  display: flex;
+  gap: 1rem;
+
+  .nav-link {
+    color: #333;
+    letter-spacing: a.ls(base);
+
+    &.active {
+      color: brown;
+    }
+  }
+}
+
+// about
+.section-about {
+  @include l.section-center();
+  padding-block: a.p(x-large);
+
+  .title {
+    text-align: center;
+    margin-bottom: a.m(base);
+  }
+
+  .desc {
+    max-width: a.px-rem(500);
+    margin-inline: auto;
+    text-align: center;
+  }
+}
+
+// error
+.section-error {
+  @include l.section-center();
+  text-align: center;
+  padding-top: a.p(x-large);
+
+  .error-status {
+    font-size: a.fs(large);
+  }
+
+  .desc {
+    color: #555;
+  }
+}
+
+// home
+.section-home {
+  @include l.section-center();
+  padding-block: 2rem;
+}
+
+.section-loading {
+  @include l.section-center();
+  padding-top: 5rem;
+
+  .title {
+    text-align: center;
+    letter-spacing: a.ls(base);
+    color: cadetblue;
+  }
+}
+
+// no-match section
+.no-match-section {
+  .desc {
+    text-align: center;
+    letter-spacing: a.ls(base);
+    color: cadetblue;
+  }
+}
+
+// cocktails list
+.section-cocktails {
+  display: grid;
+  row-gap: a.g(medium);
+
+  .title {
+    text-transform: capitalize;
+    text-align: center;
+    color: darken(cadetblue, 10);
+    margin-bottom: a.m(small);
+    letter-spacing: a.ls(base);
+  }
+}
+
+.list-cocktails {
+  display: grid;
+  gap: a.g(medium);
+  grid-template-columns: repeat(auto-fit, minmax(auto, a.px-rem(300)));
+  justify-content: center;
+}
+
+// cocktail
+.cocktail {
+  @include a.border-box-shadow-light();
+  border-radius: a.br(medium);
+
+  .img {
+    border-top-left-radius: a.br(medium);
+    border-top-right-radius: a.br(medium);
+    object-fit: cover;
+    object-position: center;
+  }
+  .info-container {
+    background: #fff;
+    border-bottom-left-radius: a.br(medium);
+    border-bottom-right-radius: a.br(medium);
+    padding: a.p(base) a.p(base);
+    display: grid;
+    row-gap: a.g(x-small);
+  }
+  .name {
+    letter-spacing: a.ls(base);
+  }
+
+  .glass {
+    letter-spacing: a.ls(medium);
+  }
+
+  .info {
+    font-size: a.fs(small);
+    color: lighten(gray, 30);
+  }
+
+  .details-btn {
+    @include c.btn-bg(rgba(0, 112, 0, 0.7));
+    justify-self: start;
+    font-size: a.fs(x-small);
+    text-transform: uppercase;
+    padding: a.p(xx-small) a.p(small);
+  }
+}
+
+// cocktail details
+.single-cocktail {
+  display: grid;
+  justify-content: center;
+  row-gap: a.g(x-large);
+  padding-block: a.p(xx-large);
+
+  .btn-home {
+    background: cadetblue;
+    color: #eee;
+    padding: a.p(x-small) a.p(small);
+    text-transform: uppercase;
+    font-size: a.fs(x-small);
+    letter-spacing: a.ls(medium);
+    border-radius: a.br(medium);
+    justify-self: center;
+    transition: all 300ms;
+
+    &:hover {
+      background: darken(cadetblue, 5);
+      color: #fff;
+      cursor: pointer;
+    }
+  }
+
+  .name {
+    text-align: center;
+  }
+
+  .drink {
+    display: grid;
+    gap: a.g(medium);
+
+    @include a.mq-up(medium) {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .drink-img {
+    width: 80vw;
+    max-width: a.px-rem(350);
+    margin-inline: auto;
+    object-fit: cover;
+    object-position: center;
+    @include a.border-box-shadow-light();
+    border-radius: a.br(medium);
+  }
+
+  .drink-info {
+    width: 80vw;
+    max-width: a.px-rem(350);
+    margin-inline: auto;
+    display: grid;
+    row-gap: a.g(small);
+  }
+
+  .drink-data {
+    text-transform: capitalize;
+    background: rgba(rgb(193, 232, 1), 0.5);
+    padding: a.p(xx-small) a.p(x-small);
+    border-radius: a.br(medium);
+    margin-right: a.m(small);
+  }
+}
+
+// search form
+.search-section {
+  margin-block: a.m(x-large);
+}
+
+.search-form {
+  background: #fff;
+  @include a.border-box-shadow-light();
+  border-radius: a.br(medium);
+  padding: a.p(large);
+  @include l.section-center(small);
+}
+
+.form-control {
+  display: grid;
+  text-align: center;
+  row-gap: a.g(small);
+
+  .label {
+    color: cadetblue;
+    letter-spacing: a.ls(medium);
+    font-size: a.fs(small);
+  }
+
+  .search-input {
+    background: rgba(190, 234, 251, 0.3);
+    border: none;
+    padding: a.p(x-small) a.p(small);
+    @include a.border-box-shadow-light();
+    border-radius: a.br(medium);
+  }
+}

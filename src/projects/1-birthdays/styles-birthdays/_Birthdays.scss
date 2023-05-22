@@ -1,0 +1,54 @@
+@use "../../../styles/scss/abstracts/" as a;
+@use "../../../styles/scss/components/" as c;
+@use "../../../styles/scss/layout/" as l;
+
+.birthdays {
+  background: a.$secondary-color;
+  min-height: 100vh;
+  @include l.section-base();
+  @include l.section-y();
+
+  &__container {
+    background: a.$b-white;
+    @include l.section-center(small);
+    padding: a.p(large);
+    @include a.box-shadow();
+    border-radius: a.br(medium);
+  }
+
+  &__title {
+    text-transform: capitalize;
+    color: a.$text-dark;
+    margin-bottom: a.m(medium);
+  }
+
+  &__card {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: a.g(base);
+    margin-bottom: a.m(medium);
+  }
+
+  &__person-img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: a.br(rounded);
+  }
+
+  &__person-name {
+    letter-spacing: a.ls(base);
+  }
+
+  &__person-age {
+    text-transform: capitalize;
+    color: a.$b-gray;
+  }
+
+  &__clear-btn {
+    @include c.btn-bg(a.$secondary-color);
+    width: 100%;
+  }
+}

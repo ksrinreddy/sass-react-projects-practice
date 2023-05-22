@@ -1,0 +1,110 @@
+@use "../../../styles/scss/abstracts/" as a;
+@use "../../../styles/scss/layout/" as l;
+
+.main-slider {
+  background: #f0f8ff;
+  min-height: 100vh;
+  padding: 5rem a.p(medium);
+}
+
+.title {
+  &__text {
+    text-align: center;
+    letter-spacing: a.ls(base);
+
+    .slash {
+      color: darken(a.$secondary-color, 10);
+    }
+  }
+}
+
+.slider-section {
+  width: 80vw;
+  height: a.px-rem(450);
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+
+  @include a.mq-up(medium) {
+    max-width: a.px-rem(780);
+  }
+}
+
+.btn {
+  background: darken(a.$primary-color, 25);
+  font-size: a.fs(large);
+  color: #fff;
+  display: grid;
+  place-items: center;
+  border-radius: a.br(medium);
+  position: absolute;
+
+  &:hover {
+    background: darken(a.$primary-color, 20);
+    transform: scale(1.1);
+    cursor: pointer;
+    transition: all 300ms;
+  }
+}
+
+.prev-btn {
+  left: 0;
+}
+
+.next-btn {
+  right: 0;
+}
+
+.slider-card {
+  position: absolute;
+  top: a.px-rem(65);
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  text-align: center;
+  row-gap: a.g(base);
+  opacity: 0;
+
+  .photo {
+    width: a.px-rem(120);
+    height: a.px-rem(120);
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+  }
+
+  .name {
+    text-transform: uppercase;
+    letter-spacing: a.ls(base);
+    color: darken(a.$secondary-color, 10);
+  }
+
+  .role {
+    text-transform: capitalize;
+    color: rgba(darken(a.$primary-color, 40), 0.6);
+  }
+
+  .quote {
+    max-width: 80%;
+    color: #808080;
+    color: rgba(darken(a.$primary-color, 35), 0.6);
+  }
+
+  .quote-icon {
+    color: darken(a.$secondary-color, 10);
+    font-size: a.fs(x-large);
+  }
+}
+
+.slider-card.nextSlide {
+  transform: translateX(100%);
+}
+.slider-card.activeSlide {
+  transform: translateX(0);
+  opacity: 1;
+}
+.slider-card.prevSlide {
+  transform: translateX(-100%);
+}

@@ -1,0 +1,26 @@
+@use "../../../styles/scss/abstracts/" as a;
+@use "../../../styles/scss/components/" as c;
+@use "../../../styles/scss/layout/" as l;
+
+.reviews-section {
+  display: grid;
+  row-gap: a.g(x-large);
+  grid-template-columns: minmax(auto, a.px-rem(450));
+  align-content: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding-inline: a.p(medium);
+
+  .title {
+    display: grid;
+    justify-content: center;
+
+    &__text {
+      text-align: center;
+      letter-spacing: a.ls(base);
+    }
+    &__underline {
+      @include a.underline();
+    }
+  }
+}

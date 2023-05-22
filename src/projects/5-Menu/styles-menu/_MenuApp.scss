@@ -1,0 +1,19 @@
+@use "../../../styles/scss/abstracts/" as a;
+
+.menu {
+  background: aliceblue;
+  padding-block: 5rem;
+
+  &__title {
+    display: grid;
+    justify-content: center;
+  }
+
+  &__title-text {
+    letter-spacing: a.ls(base);
+  }
+
+  &__underline {
+    @include a.underline();
+  }
+}

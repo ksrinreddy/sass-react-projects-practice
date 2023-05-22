@@ -1,0 +1,117 @@
+@use "../../../styles/scss/abstracts/" as a;
+@use "../../../styles/scss/components/" as c;
+
+.grocery-form {
+  background: #fff;
+  width: 90vw;
+  max-width: a.px-rem(500);
+  margin-inline: auto;
+  padding: a.p(medium);
+  margin-top: 5rem;
+}
+
+.grocery-title {
+  text-transform: capitalize;
+  text-align: center;
+  letter-spacing: a.ls(base);
+  margin-bottom: a.m(medium);
+}
+
+.form-control {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+}
+
+.input-name {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-top-left-radius: a.br(medium);
+  border-bottom-left-radius: a.br(medium);
+  border: none;
+  background: a.$bg-lightblue;
+  padding: a.p(x-small) a.p(small);
+  color: rgba(darken(a.$primary-color, 30), 0.7);
+
+  &:focus {
+    outline: none;
+    border: a.px-rem(0.01) solid darken(a.$primary-color, 10);
+    border-top-left-radius: a.br(medium);
+    border-bottom-left-radius: a.br(medium);
+  }
+}
+
+.btn-submit {
+  @include c.btn-bg(darken(a.$primary-color, 20));
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.alert {
+  border-radius: a.br(medium);
+  padding: 0 a.p(small);
+  text-align: center;
+  text-transform: capitalize;
+  font-size: a.fs(small);
+  margin-bottom: a.m(base);
+}
+
+.alert-success {
+  background: rgba(rgb(0, 128, 0), 0.1);
+  color: rgb(0, 128, 0);
+}
+.alert-danger {
+  background: rgba(rgb(230, 0, 0), 0.1);
+  color: rgb(230, 0, 0);
+}
+
+.grocery-list-container {
+  display: grid;
+  margin-top: a.m(medium);
+}
+
+.grocery-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: a.p(2) a.p(base);
+  margin-bottom: a.m(small);
+
+  &:hover {
+    background: a.$bg-lightblue;
+
+    cursor: pointer;
+    transition: all 300ms;
+  }
+
+  .btn-container {
+    display: flex;
+    align-items: center;
+    gap: a.g(medium);
+  }
+
+  .btn {
+    background: none;
+    border: none;
+
+    &:hover {
+      transform: scale(1.1);
+      cursor: pointer;
+      transition: all 300ms;
+    }
+  }
+
+  .btn-edit {
+    color: blue;
+  }
+  .btn-delete {
+    color: rgb(230, 0, 0);
+  }
+}
+
+.btn-clear-items {
+  @include c.btn-br(rgb(180, 0, 0));
+  padding: a.p(3) a.p(medium);
+  margin-top: a.m(medium);
+  margin-inline: auto;
+}

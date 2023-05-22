@@ -1,0 +1,133 @@
+@use "../../../styles/scss/abstracts/" as a;
+@use "../../../styles/scss/components/" as c;
+@use "../../../styles/scss/layout/" as l;
+
+.jobs-section {
+  background: aliceblue;
+  padding-block: 5rem;
+  min-height: 100vh;
+
+  .section-center {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: minmax(auto, a.px-rem(650));
+    padding-inline: a.p(medium);
+
+    @include a.mq-up(medium) {
+      grid-template-columns: auto 1fr;
+      column-gap: a.g(xx-large);
+      @include l.section-center();
+      padding-inline: a.p(x-large);
+    }
+  }
+
+  .title {
+    padding: a.p(medium);
+    margin-bottom: a.m(base);
+
+    &__text {
+      font-size: a.fs(x-large);
+      text-transform: capitalize;
+      text-align: center;
+      letter-spacing: a.ls(base);
+    }
+
+    &__underline {
+      @include a.underline();
+    }
+  }
+}
+
+.jobs-btn-container {
+  display: flex;
+  justify-content: center;
+  gap: a.g(base);
+  margin-bottom: a.m(base);
+
+  @include a.mq-up(medium) {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-block: a.p(medium);
+    margin-bottom: 0;
+  }
+}
+
+.job-btn {
+  background: none;
+  border: none;
+  letter-spacing: a.ls(base);
+  font-size: a.fs(base);
+  padding-block: a.p(x-small);
+
+  @include a.mq-up(medium) {
+    padding-inline: a.p(large);
+  }
+
+  &:hover {
+    color: darken(a.$primary-color, 20);
+    border-bottom: a.px-rem(1.5) solid darken(a.$primary-color, 20);
+    cursor: pointer;
+    transition: all 300ms;
+
+    @include a.mq-up(medium) {
+      border-bottom: 0;
+      border-left: a.px-rem(1.5) solid darken(a.$primary-color, 20);
+    }
+  }
+
+  &.active {
+    color: darken(a.$primary-color, 20);
+    border-bottom: a.px-rem(1.5) solid darken(a.$primary-color, 20);
+
+    @include a.mq-up(medium) {
+      border-bottom: 0;
+      border-left: a.px-rem(1.5) solid darken(a.$primary-color, 20);
+    }
+  }
+}
+
+.job-info {
+  padding: a.p(medium);
+  display: grid;
+  row-gap: a.g(small);
+
+  .job-title {
+    font-weight: a.fw(regular);
+    letter-spacing: a.ls(base);
+    color: lighten(#000, 30);
+  }
+
+  .company {
+    letter-spacing: a.ls(base);
+    background: rgba(a.$primary-color, 0.1);
+    color: darken(a.$primary-color, 20);
+    width: fit-content;
+    padding: 0 a.p(small);
+    border-radius: a.br(medium);
+  }
+
+  .dates {
+    font-size: a.fs(14.5);
+    font-weight: a.fw(regular);
+    letter-spacing: a.ls(base);
+    color: a.$b-gray;
+    margin-bottom: a.m(small);
+  }
+
+  .duties {
+    display: flex;
+    align-items: center;
+    gap: a.g(base);
+    margin-bottom: a.m(small);
+  }
+
+  .duty-icon {
+    color: darken(a.$primary-color, 20);
+  }
+
+  .job-desc {
+    font-size: a.fs(small);
+    color: darken(gray, 20);
+  }
+}

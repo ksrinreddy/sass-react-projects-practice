@@ -1,0 +1,18 @@
+@use "../../../styles/scss/abstracts/" as a;
+@use "../../../styles/scss/components/" as c;
+@use "../../../styles/scss/layout/" as l;
+
+.no-tours {
+  margin-top: 4rem;
+  text-align: center;
+
+  &__text {
+    text-transform: capitalize;
+    margin-bottom: a.m(small);
+  }
+
+  &__refresh-btn {
+    @include c.btn-bg(#87ceeb);
+    color: darken(#87ceeb, 50);
+  }
+}

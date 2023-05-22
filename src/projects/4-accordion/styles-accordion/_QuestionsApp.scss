@@ -1,0 +1,50 @@
+@use "../../../styles/scss/abstracts/" as a;
+@use "../../../styles/scss/components/" as c;
+@use "../../../styles/scss/layout/" as l;
+
+body {
+  background: rgb(62, 0, 62);
+  padding-inline: a.p(medium);
+}
+
+.qa-section {
+  padding: a.p(medium);
+  display: grid;
+  row-gap: a.g(x-large);
+  grid-template-columns: minmax(auto, a.px-rem(500));
+  justify-content: center;
+  background: a.$b-white;
+  margin-block: 5rem;
+
+  @include a.border-box-shadow-medium();
+  border-radius: a.br(medium);
+
+  @include a.mq-up(medium) {
+    grid-template-columns: 1fr 2fr;
+    column-gap: a.g(medium);
+    row-gap: 0;
+    max-width: a.px-rem(780);
+    margin-inline: auto;
+  }
+
+  .title {
+    text-align: center;
+    text-transform: capitalize;
+    letter-spacing: a.px-rem(0.5);
+    line-height: 1.3;
+
+    @include a.mq-up(medium) {
+      text-align: start;
+      //   line-height: 1.3;
+    }
+  }
+}
+
+.qa-container {
+  display: grid;
+  row-gap: a.g(medium);
+
+  //   @include a.mq-up(medium) {
+  //     grid-template-columns: minmax(auto, a.px-rem(560));
+  //   }
+}

@@ -1,0 +1,46 @@
+@use "../../../styles/scss/abstracts/" as a;
+@use "../../../styles/scss/components/" as c;
+
+.section-center {
+  width: 85vw;
+  max-width: a.px-rem(600);
+  margin-inline: auto;
+  margin-top: 5rem;
+  text-align: center;
+}
+
+.lorem-title {
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: a.ls(base);
+  color: darken(a.$primary-color, 25);
+  margin-bottom: a.m(medium);
+}
+
+.lorem-form {
+  margin-bottom: a.m(x-large);
+}
+
+.para-label {
+  color: darken(a.$primary-color, 20);
+}
+.para-input {
+  border: none;
+  padding: a.p(small);
+  width: a.px-rem(50);
+  border-radius: a.br(small);
+  margin-inline: a.m(x-small);
+  @include a.border-box-shadow-light();
+  font-weight: a.fw(bold);
+}
+
+.submit-btn {
+  @include c.btn-bg(darken(a.$primary-color, 15));
+  padding-block: a.p(small);
+}
+
+.lorem-para {
+  font-size: a.fs(small);
+  color: rgba(darken(a.$primary-color, 30), 0.5);
+  margin-bottom: a.m(medium);
+}

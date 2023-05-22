@@ -1,0 +1,68 @@
+@use "../../../styles/scss/abstracts/" as a;
+
+.menu-items {
+  padding: a.p(medium);
+  display: grid;
+  row-gap: a.g(x-large);
+  justify-content: center;
+
+  @include a.mq-up(large) {
+    grid-template-columns: repeat(2, minmax(auto, a.px-rem(500)));
+    column-gap: a.g(xx-large);
+    padding-inline: a.p(x-large);
+  }
+}
+
+.menu-item {
+  display: grid;
+  row-gap: a.g(small);
+  grid-template-columns: minmax(auto, a.px-rem(450));
+
+  @include a.mq-up(medium) {
+    grid-template-columns: repeat(2, minmax(auto, a.px-rem(350)));
+    row-gap: 0;
+    column-gap: a.g(base);
+  }
+
+  @include a.mq-up(large) {
+    grid-template-columns: repeat(2, minmax(auto, a.px-rem(250)));
+  }
+
+  &__img {
+    display: block;
+    width: 100%;
+    height: a.px-rem(250);
+    object-fit: cover;
+    object-position: center;
+    border-radius: a.br(medium);
+
+    @include a.mq-up(medium) {
+      height: a.px-rem(200);
+    }
+
+    @include a.mq-up(large) {
+      height: a.px-rem(150);
+    }
+  }
+
+  &__header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-block: a.p(x-small);
+    border-bottom: a.px-rem(1) solid rgba(#000, 0.1);
+    margin-bottom: a.m(small);
+
+    @include a.mq-up(medium) {
+      padding-block: 0;
+    }
+  }
+
+  &__title {
+    text-transform: capitalize;
+  }
+
+  &__desc {
+    color: a.$b-gray;
+  }
+}

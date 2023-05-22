@@ -1,0 +1,37 @@
+@use "../../../styles/scss/abstracts/" as a;
+@use "../../../styles/scss/components/" as c;
+@use "../../../styles/scss/layout/" as l;
+
+.tours {
+  &__title {
+    display: grid;
+    justify-content: center;
+    row-gap: a.g(x-small);
+    margin-top: a.m(xx-large);
+    margin-bottom: a.m(x-large);
+  }
+
+  &__title-text {
+    text-transform: capitalize;
+    letter-spacing: a.ls(base);
+  }
+
+  &__title-underline {
+    width: 50%;
+    height: a.px-rem(3);
+    margin-inline: auto;
+    margin-top: a.m(x-small);
+    background: a.$secondary-color;
+  }
+
+  &__list {
+    &.grid {
+      display: grid;
+      grid-template-columns: minmax(auto, a.px-rem(500));
+      row-gap: 2rem;
+      justify-content: center;
+      padding-inline: a.p(medium);
+      padding-bottom: a.p(x-large);
+    }
+  }
+}

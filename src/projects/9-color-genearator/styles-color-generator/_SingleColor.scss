@@ -1,0 +1,39 @@
+@use "../../../styles/scss/abstracts/" as a;
+@use "../../../styles/scss/components/" as c;
+
+.color-box {
+  height: a.px-rem(125);
+}
+
+.color-info {
+  width: 100%;
+  height: 100%;
+  padding: a.p(medium);
+  opacity: 0;
+
+  &:hover {
+    opacity: 1;
+    cursor: pointer;
+    transition: all 1000ms;
+  }
+}
+
+.percentage {
+  margin-bottom: a.m(x-small);
+}
+
+.hex-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.copy-icon {
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.color-box.text-light {
+  color: #fff;
+}

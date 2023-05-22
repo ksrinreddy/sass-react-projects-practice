@@ -1,0 +1,58 @@
+@use "../../../styles/scss/abstracts/" as a;
+@use "../../../styles/scss/components/" as c;
+@use "../../../styles/scss/layout/" as l;
+
+.review {
+  display: grid;
+  justify-items: center;
+  text-align: center;
+  row-gap: a.g(small);
+  padding: a.p(small) a.p(medium);
+  border-radius: a.br(medium);
+  @include a.border-box-shadow-medium();
+
+  &__author-img {
+    width: a.px-rem(100);
+    height: a.px-rem(100);
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+  }
+
+  &__author-name {
+    text-transform: capitalize;
+    letter-spacing: a.ls(base);
+  }
+  &__author-job {
+    text-transform: uppercase;
+    color: darken(#87ceeb, 10);
+  }
+
+  &__text {
+    font-size: a.fs(small);
+  }
+}
+
+.btn-container {
+  display: flex;
+  gap: a.g(base);
+
+  .prev-btn,
+  .next-btn {
+    color: darken(#87ceeb, 10);
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.2);
+      transition: all 300ms;
+    }
+  }
+}
+
+.random-btn {
+  @include c.btn-bg(rgba(0, 183, 255, 0.1));
+  color: rgb(0, 183, 255);
+  padding-inline: a.p(small);
+  letter-spacing: normal;
+  font-size: a.fs(x-small);
+}

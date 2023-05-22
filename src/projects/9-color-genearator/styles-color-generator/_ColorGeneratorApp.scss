@@ -1,0 +1,42 @@
+@use "../../../styles/scss/abstracts/" as a;
+@use "../../../styles/scss/components/" as c;
+
+.section-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: a.g(medium);
+  margin-top: 5rem;
+  width: 90vw;
+  max-width: a.px-rem(700);
+  margin-inline: auto;
+}
+
+.form {
+  &__title {
+    text-transform: capitalize;
+    letter-spacing: a.ls(base);
+  }
+
+  .colorInput {
+    letter-spacing: a.ls(x-small);
+    padding: a.p(small);
+    border: none;
+    border-radius: a.br(medium);
+
+    &.error {
+      border: a.px-rem(2) solid rgb(230, 0, 0);
+    }
+  }
+
+  .btn-submit {
+    @include c.btn-bg(rgba(blue, 0.7));
+    padding-block: a.p(small);
+  }
+}
+
+.list-colors {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(a.px-rem(200), 1fr));
+  margin-top: 3rem;
+}

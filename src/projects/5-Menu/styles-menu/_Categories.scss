@@ -1,0 +1,16 @@
+@use "../../../styles/scss/abstracts/" as a;
+@use "../../../styles/scss/components/" as c;
+
+.btn-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: a.g(base);
+  justify-content: center;
+  padding: a.p(medium);
+
+  .filter-btn {
+    @include c.btn-br(rgb(184, 159, 15));
+    padding-inline: a.p(small);
+    border-radius: a.br(medium);
+  }
+}

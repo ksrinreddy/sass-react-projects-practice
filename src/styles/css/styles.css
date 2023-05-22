@@ -34,4 +34,252 @@ h1,
 h2,
 h3 {
   line-height: 1.1;
+}
+
+.navbar {
+  background: #fff;
+}
+
+.nav-center {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90vw;
+  max-width: 62rem;
+  margin-inline: auto;
+  padding-block: 1rem;
+}
+.nav-center .logo {
+  width: 200px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1rem;
+}
+.nav-links .nav-link {
+  color: #333;
+  letter-spacing: 0.0625rem;
+}
+.nav-links .nav-link.active {
+  color: brown;
+}
+
+.section-about {
+  width: 90vw;
+  max-width: 62rem;
+  margin-inline: auto;
+  padding-block: 3rem;
+}
+.section-about .title {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.section-about .desc {
+  max-width: 31.25rem;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.section-error {
+  width: 90vw;
+  max-width: 62rem;
+  margin-inline: auto;
+  text-align: center;
+  padding-top: 3rem;
+}
+.section-error .error-status {
+  font-size: 1.5rem;
+}
+.section-error .desc {
+  color: #555;
+}
+
+.section-home {
+  width: 90vw;
+  max-width: 62rem;
+  margin-inline: auto;
+  padding-block: 2rem;
+}
+
+.section-loading {
+  width: 90vw;
+  max-width: 62rem;
+  margin-inline: auto;
+  padding-top: 5rem;
+}
+.section-loading .title {
+  text-align: center;
+  letter-spacing: 0.0625rem;
+  color: cadetblue;
+}
+
+.no-match-section .desc {
+  text-align: center;
+  letter-spacing: 0.0625rem;
+  color: cadetblue;
+}
+
+.section-cocktails {
+  display: grid;
+  row-gap: 1.25rem;
+}
+.section-cocktails .title {
+  text-transform: capitalize;
+  text-align: center;
+  color: #4c7e80;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.0625rem;
+}
+
+.list-cocktails {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(auto-fit, minmax(auto, 18.75rem));
+  justify-content: center;
+}
+
+.cocktail {
+  border: 0.046875rem solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0rem 0rem 0.0625rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.25rem;
+}
+.cocktail .img {
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+.cocktail .info-container {
+  background: #fff;
+  border-bottom-left-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
+  padding: 1rem 1rem;
+  display: grid;
+  row-gap: 0.25rem;
+}
+.cocktail .name {
+  letter-spacing: 0.0625rem;
+}
+.cocktail .glass {
+  letter-spacing: 0.25rem;
+}
+.cocktail .info {
+  font-size: 0.83rem;
+  color: #cdcdcd;
+}
+.cocktail .details-btn {
+  border: none;
+  background: rgba(0, 112, 0, 0.7);
+  color: #ffffff;
+  padding: 0.25rem 1rem;
+  border-radius: 0.1875rem;
+  text-transform: capitalize;
+  letter-spacing: 0.0625rem;
+  justify-self: start;
+  font-size: 0.67rem;
+  text-transform: uppercase;
+  padding: 0.1rem 0.5rem;
+}
+.cocktail .details-btn:hover {
+  background: rgba(0, 61, 0, 0.7);
+  cursor: pointer;
+  transition: all, 300ms;
+}
+
+.single-cocktail {
+  display: grid;
+  justify-content: center;
+  row-gap: 2rem;
+  padding-block: 4rem;
+}
+.single-cocktail .btn-home {
+  background: cadetblue;
+  color: #eee;
+  padding: 0.25rem 0.5rem;
+  text-transform: uppercase;
+  font-size: 0.67rem;
+  letter-spacing: 0.25rem;
+  border-radius: 0.25rem;
+  justify-self: center;
+  transition: all 300ms;
+}
+.single-cocktail .btn-home:hover {
+  background: #568e90;
+  color: #fff;
+  cursor: pointer;
+}
+.single-cocktail .name {
+  text-align: center;
+}
+.single-cocktail .drink {
+  display: grid;
+  gap: 1.25rem;
+}
+@media screen and (min-width: 48rem) {
+  .single-cocktail .drink {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.single-cocktail .drink-img {
+  width: 80vw;
+  max-width: 21.875rem;
+  margin-inline: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  border: 0.046875rem solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0rem 0rem 0.0625rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.25rem;
+}
+.single-cocktail .drink-info {
+  width: 80vw;
+  max-width: 21.875rem;
+  margin-inline: auto;
+  display: grid;
+  row-gap: 0.5rem;
+}
+.single-cocktail .drink-data {
+  text-transform: capitalize;
+  background: rgba(193, 232, 1, 0.5);
+  padding: 0.1rem 0.25rem;
+  border-radius: 0.25rem;
+  margin-right: 0.5rem;
+}
+
+.search-section {
+  margin-block: 3rem;
+}
+
+.search-form {
+  background: #fff;
+  border: 0.046875rem solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0rem 0rem 0.0625rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.25rem;
+  padding: 2rem;
+  width: 90vw;
+  max-width: 28rem;
+  margin-inline: auto;
+}
+
+.form-control {
+  display: grid;
+  text-align: center;
+  row-gap: 0.5rem;
+}
+.form-control .label {
+  color: cadetblue;
+  letter-spacing: 0.25rem;
+  font-size: 0.83rem;
+}
+.form-control .search-input {
+  background: rgba(190, 234, 251, 0.3);
+  border: none;
+  padding: 0.25rem 0.5rem;
+  border: 0.046875rem solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0rem 0rem 0.0625rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.25rem;
 }/*# sourceMappingURL=styles.css.map */
